@@ -19,6 +19,7 @@ import java.util.stream.Collectors;
 @SupportedAnnotationTypes("org.example.Generate")
 public class GetterSetterProcessor extends AbstractProcessor {
 
+
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
         Filer filer = processingEnv.getFiler();

@@ -1,0 +1,4 @@
+org\example\BuilderProcessor.class
+org\example\Builder.class
+META-INF\services\javax.annotation.processing.Processor
+org\example\BuilderProcessor$1.class

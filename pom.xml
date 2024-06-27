@@ -27,7 +27,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub Packages</name>
-			<url>https://maven.pkg.github.com/mohammad-ayan-008/AUTOGETSET</url>
+			<url>https://maven.pkg.github.com/mohammad-ayan-008/AutoGETSET</url>
 		</repository>
 	</distributionManagement>
 

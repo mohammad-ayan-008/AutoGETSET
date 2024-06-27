@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 
 @AutoService(Processor.class)
 @SupportedSourceVersion(SourceVersion.RELEASE_17)
-@SupportedAnnotationTypes("org.example.GetterSetter")
+@SupportedAnnotationTypes("org.example.Generate")
 public class GetterSetterProcessor extends AbstractProcessor {
 
     @Override
@@ -24,7 +24,7 @@ public class GetterSetterProcessor extends AbstractProcessor {
         Filer filer = processingEnv.getFiler();
         Messager messager = processingEnv.getMessager();
 
-        Set<? extends Element> elementsAnnotatedWith = roundEnv.getElementsAnnotatedWith(GetterSetter.class);
+        Set<? extends Element> elementsAnnotatedWith = roundEnv.getElementsAnnotatedWith(Generate.class);
         for (Element element:elementsAnnotatedWith) {
             if (!(element instanceof TypeElement typeElement)){
                 messager.printMessage(Diagnostic.Kind.ERROR,"GetterSetter annotation is only for Classes");
@@ -73,7 +73,7 @@ public class GetterSetterProcessor extends AbstractProcessor {
                            }
                            """.formatted(fieldType,pascalName,fieldName,pascalName,fieldType,fieldName,fieldName,fieldName);
                 };
-                GetterSetter annotation = typeElement.getAnnotation(GetterSetter.class);
+                Generate annotation = typeElement.getAnnotation(Generate.class);
                 String extendingClass;
                 try{
                     extendingClass = annotation.extend().toString();
